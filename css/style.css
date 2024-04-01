@@ -1,0 +1,242 @@
+:root {
+    --color-principal: #F3F5FC;
+    --color-blanco: #FFFFFF;
+    --color-texto1: #343A40;
+    --color-texto2: #495057;
+    --color-azul1: #0A3871;
+    --color-hover1: #07274f;
+    --color-hover2: #d2d4dc;
+    --fuente: 'Inter', sans-serif;
+}
+html {
+    font-family: var(--fuente);
+    background-color: var(--color-principal);
+}
+main {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    height: 100vh;
+}
+
+main nav .img-logo {
+    width: 30px;
+    height: auto;
+    margin: 40px 80px;
+}
+
+/* Sección de Ingreso */
+main .section-txt {
+    display: flex;
+    flex-direction: column;
+    justify-content: right;
+    height: auto;
+    margin: 40px 480px 80px 10%;
+}
+
+main .section-txt .txta-entrada {
+    border: none;
+    width: 100%;
+    height: calc(100vh - 350px);
+    background-color: var(--color-principal);
+    outline: none;
+    resize: none;
+    font-size: 32px;
+    line-height: 120%;
+    color: var(--color-azul1);
+}
+
+main .section-txt .txta-entrada::placeholder {
+    color: var(--color-azul1);
+}
+
+main .section-txt .div-warning {
+    display: flex;
+    align-items: center;
+    margin: 16px 0;
+}
+
+main .section-txt .div-warning img {
+    margin-right: 8px;
+}
+
+main .section-txt .div-warning p {
+    font-size: 12px;
+    font-weight: 300;
+    color: var(--color-texto2);
+}
+
+main .section-txt .div-buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.btns {
+    width: calc(50% - 12px);
+    height: 67px;
+    font-size: 16px;
+    border-radius: 24px;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+main .section-txt .div-buttons .btn-encriptar {
+    background-color: var(--color-azul1);
+    color: var(--color-blanco);
+}
+
+main .section-txt .div-buttons .btn-encriptar:hover {
+    background-color: var(--color-hover1);
+}
+
+main .section-txt .div-buttons .btn-desencriptar {
+    background-color: var(--color-principal);
+    color: var(--color-azul1);
+    border: 1px solid var(--color-azul1);
+}
+
+main .section-txt .div-buttons .btn-desencriptar:hover {
+    background-color: var(--color-hover2);
+}
+
+/* Sección de salida */
+
+main .section-result {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: center; */
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    bottom: 40px;
+    width: 400px;
+    height: calc(100vh - 80px);
+    padding: 32px;
+    background-color: var(--color-blanco);
+    box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
+    border-radius: 32px;
+}
+
+main .section-expandir {
+    justify-content: space-between;
+}
+
+main .section-centrar {
+    justify-content: center;
+}
+
+.section-centrar {
+    justify-content: center;
+}
+
+main .section-result .image-muneca {
+    display: inline-block;
+    width: auto;
+    height: auto;
+    margin-bottom: 32px;
+}
+
+main .section-result .h3-nme {
+    font-size: 24px;
+    line-height: 120%;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 16px;
+    color: var(--color-texto1);
+}
+
+main .section-result .p-imessage {
+    font-size: 16px;
+    font-weight: 300;
+    text-align: center;
+    color: var(--color-texto2);
+}
+
+main .section-result .txta-salida {
+    display: none;
+    border: none;
+    width: 100%;
+    height: auto;
+    background-color: var(--color-blanco);
+    outline: none;
+    resize: none;
+    font-size: 32px;
+    font-weight: 300;
+    line-height: 120%;
+    color: var(--color-texto2); 
+}
+
+textarea {
+    font-family: var(--fuente);
+}
+
+main .section-result .btn-copiar {
+    display: none;
+    width: 100%;
+    margin-top: 32px;
+    background-color: var(--color-blanco);
+    color: var(--color-azul1);
+    border: 1px solid var(--color-azul1);
+}
+
+main .section-result .btn-copiar:hover {
+    background-color: var(--color-hover2);
+}
+
+/* Diseño responsive */
+@media screen and (max-width: 768px) {
+    main {
+        height: auto;
+        justify-content: start;
+        padding: 24px 16px 0 16px;
+    }
+    main nav .img-logo {
+        margin: 0;
+    }
+
+    /* Sección de Ingreso */
+    main .section-txt {
+        width: 100%;
+        height: auto;
+        margin: 80px 0 0 0;
+        justify-content: start;
+    }
+    
+    main .section-txt .txta-entrada {
+        height: calc(100vh - 400px);
+    }
+    
+    /* Sección de salida */
+    
+    main .section-result {
+        position: initial;
+        width: 100%;
+        margin: 64px 0 40px 0;
+        height: auto;
+    }
+    
+    main .section-result .image-muneca {
+        display: none;
+    }
+    
+    main .section-result .txta-salida {
+        height: calc(100vh - 400px);
+    }
+}
+
+@media screen and (max-width: 376px) {
+    main .section-txt .div-buttons {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .btns {
+        width: 100%;
+    }
+    
+    main .section-txt .div-buttons .btn-encriptar {
+        margin-bottom: 24px;
+    }
+}
